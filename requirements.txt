@@ -1,0 +1,10 @@
+Flask
+torch
+torchvision
+torch_geometric
+pandas
+numpy
+scikit-learn
+Pillow
+tqdm
+openpyxl

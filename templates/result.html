@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả Dự đoán</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { max-width: 600px; text-align: center; }
+        .card { margin-top: 3rem; }
+        .result-box { padding: 2rem; border-radius: 0.5rem; color: white; }
+        .result-box.benh { background-color: #dc3545; } /* Màu đỏ cho "Bệnh" */
+        .result-box.khong-benh { background-color: #198754; } /* Màu xanh cho "Không Bệnh" */
+        .result-box h1 { font-size: 3rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>Kết quả Dự đoán</h2>
+            </div>
+            <div class="card-body">
+                {% if prediction == "Bệnh" %}
+                    <div class="result-box benh">
+                        <h1>BỆNH</h1>
+                    </div>
+                {% else %}
+                    <div class="result-box khong-benh">
+                        <h1>KHÔNG BỆNH</h1>
+                    </div>
+                {% endif %}
+
+                <p class="mt-4 fs-5">Xác suất dự đoán là 'Bệnh': <strong>{{ probability }}</strong></p>
+
+                <hr>
+
+                <a href="/" class="btn btn-secondary mt-3">Thử lại với bệnh nhân khác</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
